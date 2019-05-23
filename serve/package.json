@@ -1,0 +1,15 @@
+{
+  "name": "serve",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+
+  /*  自定义脚本 */
+  "scripts": {
+    "serve": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
