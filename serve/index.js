@@ -9,6 +9,7 @@ app.use(express.json())
 
 
 require('./routes/admin')(app)
+//引用链接链接数据库文件
 require('./plugins/mongo')(app)
 
 app.listen(3030,() =>{
