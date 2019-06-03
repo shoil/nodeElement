@@ -38,7 +38,7 @@ export default {
     //     this.items = res.data
     // }
     fetch() {
-      this.$http.get("categories").then(res => {
+      this.$http.get("rest/categories").then(res => {
         this.items = res.data;
       });
     },
@@ -50,7 +50,7 @@ export default {
         type: "warning"
       })
         .then(() => {
-          this.$http.delete(`categories/${row._id}`);
+          this.$http.delete(`rest/categories/${row._id}`);
           this.$message({
             type: "success",
             message: "删除成功!"

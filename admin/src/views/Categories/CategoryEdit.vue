@@ -40,9 +40,9 @@ export default {
       //异步回调写成类似回调的写法
   
       if(this.id){
-        this.$http.put(`categories/${this.id}`, this.model);
+        this.$http.put(`rest/categories/${this.id}`, this.model);
       } else {
-        this.$http.post("categories", this.model);
+        this.$http.post("rest/categories", this.model);
       }
       
       this.$message({
@@ -69,13 +69,13 @@ export default {
     //   }
     fetch() {
       // 要将"" 改为` `
-      this.$http.get(`/categories/${this.id}`).then(res =>{
+      this.$http.get(`rest/categories/${this.id}`).then(res =>{
       this.model = res.data;
       })
     },
     fetchParenOption() {
       // 要将"" 改为` `
-      this.$http.get('/categories').then(res =>{
+      this.$http.get('rest/categories').then(res =>{
       this.parentOptions = res.data;
       })
     }
