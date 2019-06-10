@@ -14,12 +14,8 @@
           <el-button
             type="text"
             size="small"
-            @click="$router.push(`/categories/edit/${scope.row._id}`)"
-            >编辑</el-button
-          >
-          <el-button type="text" size="small" @click="remove(scope.row)"
-            >删除</el-button
-          >
+            @click="$router.push(`/categories/edit/${scope.row._id}`)">编辑</el-button>
+          <el-button type="text" size="small" @click="remove(scope.row)">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -33,10 +29,6 @@ export default {
     };
   },
   methods: {
-    // async fetch(){
-    //     const res = await this.$http.get('categories')
-    //     this.items = res.data
-    // }
     fetch() {
       this.$http.get("rest/categories").then(res => {
         this.items = res.data;
@@ -48,16 +40,14 @@ export default {
         confirmButtonText: "确定",
         cancelButtonText: "取消",
         type: "warning"
-      })
-        .then(() => {
+      }).then(() => {
           this.$http.delete(`rest/categories/${row._id}`);
           this.$message({
             type: "success",
             message: "删除成功!"
           });
           this.fetch();
-        })
-        .catch(() => {
+        }).catch(() => {
           this.$message({
             type: "info",
             message: "已取消删除"

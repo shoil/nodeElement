@@ -44,29 +44,13 @@ export default {
       } else {
         this.$http.post("rest/categories", this.model);
       }
-      
+      // 创建成功后跳转到列表页
+      this.$router.push("/categories/list");
       this.$message({
         type: "success",
         message: "保存成功"
       });
-      // 创建成功后跳转到列表页
-      this.$router.push("/categories/list");
-      // console.log('save')
     },
-
-    // // asyns将异步回调写成类似同步
-    //   // async 出现了报错为解决暂时不用
-    //   asyns saveEdit(){
-    //      //异步回调写成类似回调的写法
-    //       const res =await this.$http.post('categories',this.model)
-    //       this.$message({
-    //         type: 'success',
-    //         message: '保存成功'
-    //       })
-    //       // 创建成功后跳转到列表页
-    //       this.$router.push('/categories/list')
-    //       // console.log('save')
-    //   }
     fetch() {
       // 要将"" 改为` `
       this.$http.get(`rest/categories/${this.id}`).then(res =>{

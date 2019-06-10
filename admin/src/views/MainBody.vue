@@ -15,6 +15,19 @@
               <el-menu-item index="/categories/create">新建分类</el-menu-item>
               <el-menu-item index="/categories/list">分类列表</el-menu-item>
             </el-menu-item-group>
+
+             <el-menu-item-group>
+              <template slot="title">物品</template>
+              <!-- 这里与router path值保持一致 -->
+              <el-menu-item index="/equipments/create">新建装备</el-menu-item>
+              <el-menu-item index="/equipments/list">装备列表</el-menu-item>
+            </el-menu-item-group>
+             <el-menu-item-group>
+              <template slot="title">英雄</template>
+              <!-- 这里与router path值保持一致 -->
+              <el-menu-item index="/hero/create">创建英雄</el-menu-item>
+              <el-menu-item index="/hero/list">英雄列表</el-menu-item>
+            </el-menu-item-group>
           </el-submenu>
         </el-menu>
       </el-aside>
