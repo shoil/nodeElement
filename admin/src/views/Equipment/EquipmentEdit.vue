@@ -87,7 +87,7 @@ export default {
 </script>
 <style>
 /* 上传图片的样式 */
-  .avatar-uploader .el-upload {
+  /* .avatar-uploader .el-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 6px;
     cursor: pointer;
@@ -109,5 +109,5 @@ export default {
     width: 178px;
     height: 178px;
     display: block;
-  }
+  } */
 </style>

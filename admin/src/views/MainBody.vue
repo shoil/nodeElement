@@ -4,29 +4,59 @@
       <!-- 100vh表示屏幕的高度-->
       <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
         <!-- 添加router变成路由的一个状态 -->
-        <el-menu router :default-openeds="['1', '3']">
+        <el-menu router :default-openeds="['1']" unique-opened :default-active="$route.path"> 
+         <!--  :default-openeds="['1']" 默认打开那一个 unique-opened 默认展开第一个且只能展开一组 :default-active="$route.path"默认打开分页 $route.path高亮 -->
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-message"></i>内容管理
             </template>
-            <el-menu-item-group>
-              <template slot="title">分类</template>
-              <!-- 这里与router path值保持一致 -->
-              <el-menu-item index="/categories/create">新建分类</el-menu-item>
-              <el-menu-item index="/categories/list">分类列表</el-menu-item>
-            </el-menu-item-group>
-
              <el-menu-item-group>
               <template slot="title">物品</template>
               <!-- 这里与router path值保持一致 -->
               <el-menu-item index="/equipments/create">新建装备</el-menu-item>
               <el-menu-item index="/equipments/list">装备列表</el-menu-item>
             </el-menu-item-group>
-             <el-menu-item-group>
+            <el-menu-item-group>
               <template slot="title">英雄</template>
               <!-- 这里与router path值保持一致 -->
-              <el-menu-item index="/hero/create">创建英雄</el-menu-item>
-              <el-menu-item index="/hero/list">英雄列表</el-menu-item>
+              <el-menu-item index="/heroes/create">创建英雄</el-menu-item>
+              <el-menu-item index="/heroes/list">英雄列表</el-menu-item>
+            </el-menu-item-group>
+            <el-menu-item-group>
+              <template slot="title">文章</template>
+              <el-menu-item index="/articles/create">创建文章</el-menu-item>
+              <el-menu-item index="/articles/list">文章列表</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+       
+          <el-submenu index="2">
+            <template slot="title">
+              <i class="el-icon-message"></i>运营管理
+            </template>
+            
+            <el-menu-item-group>
+              <template slot="title">广告位</template>
+              <el-menu-item index="/ads/create">新建广告位</el-menu-item>
+              <el-menu-item index="/ads/list">广告位列表</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+      
+          <el-submenu index="3">
+            <template slot="title">
+              <i class="el-icon-message"></i>系统管理
+            </template>
+            
+            <el-menu-item-group>
+              <template slot="title">分类</template>
+              <!-- 这里与router path值保持一致 -->
+              <el-menu-item index="/categories/create">新建分类</el-menu-item>
+              <el-menu-item index="/categories/list">分类列表</el-menu-item>
+            </el-menu-item-group>
+            <el-menu-item-group>
+              <template slot="title">管理员</template>
+              <!-- 这里与router path值保持一致 -->
+              <el-menu-item index="/admin_users/create">新建管理员</el-menu-item>
+              <el-menu-item index="/admin_users/list">管理员列表</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>

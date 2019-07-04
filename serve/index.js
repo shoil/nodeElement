@@ -2,6 +2,10 @@ const express = require("express")
 
 const app = express()
 
+
+// 设置密码
+app.set('secret','23r3r4ii2eji2045j9')
+
 // 跨域模块
 app.use(require('cors')())
 // json
